@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body style="background-color: #f9f9f9">
+<div class="box">
+    <div class="logo-img">
+        <img src="images/logo-mi.png" alt="">
+    </div>
+    <p class="title">注册小米账号</p>
+
+    <div class="form">
+        <form action="#">
+            <label for="username">用户名：</label>
+            <input class="in" type="text" name="username" id="username" placeholder="请输入姓名" pattern="^[a-zA-Z]{6,15}$"
+                   title="姓名必须为6-15位英文字符" required>
+
+            <label for="phone">手机号：</label>
+            <input class="in" type="text" name="phone" id="phone" placeholder="请输入电话号码"
+                   pattern="^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$" required>
+
+            <label for="pwd">密码：</label>
+            <input class="in" type="password" name="pwd" id="pwd">
+
+            <label for="pwd1">确认密码：</label>
+            <input class="in" type="password" name="pwd1" id="pwd1">
+
+            <label for="chec">验证码：</label>
+            <input class="in" type="text" name="chec" id="chec">
+
+            <input type="submit" value="立即注册" class="submit in">
+
+            <div class="last">
+                <input type="checkbox"/>已阅读并同意：小米 用户协议和 隐私政策
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script>
+    var pwd1 = document.getElementById('pwd1');
+    pwd1.onblur = function () {
+        var p1 = document.getElementById('pwd').value;
+        var p2 = document.getElementById('pwd1').value;
+        if (p1 !== p2) {
+            alert("两次密码不一致");
+            document.getElementById('pwd1').value="123456789";
+        }
+    }
+</script>
+</body>
+</html>
